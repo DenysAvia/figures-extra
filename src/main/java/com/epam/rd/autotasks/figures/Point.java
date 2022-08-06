@@ -17,4 +17,12 @@ class Point {
         return y;
     }
 
+    public boolean isTheSame(Point point) {
+        if (this == point) return true;
+        if (getClass() != point.getClass()) return false;
+        double ERROR_DELTA = 0.0001;
+        if (Math.abs(x - point.getX()) >= ERROR_DELTA) return false;
+        return  Math.abs(y - point.getY()) < ERROR_DELTA;
+    }
+
 }
